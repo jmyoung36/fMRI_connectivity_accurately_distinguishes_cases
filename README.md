@@ -12,7 +12,7 @@ classify.m reads in the selected data and metadata, applies corrections for age,
 containing probabilistic predictions for case/control status to file. Files are also output to store predictions of age, sex, and motion level,
 to enable some checks on how well the correction methods are working. The output format is as follows:
 
-Subject ID 1 | case/control label | age | sex | motion | prediction
+Subject ID | case/control label | age | sex | motion | prediction
 
 where prediction is a probabilistic prediction of case or male status for prediction of case/control or prediction of sex files respectively,
 or point predictions of age or motion level for age and motion level prediction files. To enable assessment of which connections or regions
