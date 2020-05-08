@@ -13,7 +13,7 @@ demographics_file = 'Dublin_demographics.csv';
 %job_ind = str2num(getenv('SGE_TASK_ID'));
 job_ind = 1;
 
-% which group do we want to train on?
+% which group do we want to train remval of potential confounds (age, sex , motion) on?
 train_group = 'con';
 
 % do we regress motion alongside age and sex?
