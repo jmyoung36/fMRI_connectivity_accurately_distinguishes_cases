@@ -233,7 +233,7 @@ likfunc = @likErf;
 covfunc = @covLINone; hyp.cov = 0;
 
 % optimise the hyperparameters
-hyp_opt = minimize_quiet(hyp, @gp, -200, @infEP, meanfunc, covfunc, likfunc, train_data, train_labels);
+hyp_opt = minimize(hyp, @gp, -200, @infEP, meanfunc, covfunc, likfunc, train_data, train_labels);
     
 % make and store predictions
 [a b c d lp] = gp(hyp_opt, @infEP, meanfunc, covfunc, likfunc, train_data, train_labels, test_data, ones(test_size, 1));
@@ -262,7 +262,7 @@ likfunc = @likGauss; hyp.lik = 0.05;
 covfunc = @covLINone; hyp.cov = 0;
 
 % optimise the hyperparameters
-hyp_opt = minimize_quiet(hyp, @gp, -200, @infExact, meanfunc, covfunc, likfunc, train_data, train_age);
+hyp_opt = minimize(hyp, @gp, -200, @infExact, meanfunc, covfunc, likfunc, train_data, train_age);
     
 % make and store predictions
 [mu s2] = gp(hyp_opt, @infExact, meanfunc, covfunc, likfunc, train_data, train_age, test_data);
@@ -295,7 +295,7 @@ likfunc = @likErf;
 covfunc = @covLINone; hyp.cov = 0;
      
 % optimise the hyperparameters
-hyp_opt = minimize_quiet(hyp, @gp, -200, @infEP, meanfunc, covfunc, likfunc, train_data, train_sex);
+hyp_opt = minimize(hyp, @gp, -200, @infEP, meanfunc, covfunc, likfunc, train_data, train_sex);
     
 % make and store predictions
 [a b c d lp] = gp(hyp_opt, @infEP, meanfunc, covfunc, likfunc, train_data, train_sex, test_data, ones(test_size, 1));
@@ -324,7 +324,7 @@ likfunc = @likGauss; hyp.lik = 0.05;
 covfunc = @covLINone; hyp.cov = 0;
 
 % optimise the hyperparameters
-hyp_opt = minimize_quiet(hyp, @gp, -200, @infExact, meanfunc, covfunc, likfunc, train_data, train_motion);
+hyp_opt = minimize(hyp, @gp, -200, @infExact, meanfunc, covfunc, likfunc, train_data, train_motion);
     
 % make and store predictions
 [mu s2] = gp(hyp_opt, @infExact, meanfunc, covfunc, likfunc, train_data, train_motion, test_data);
