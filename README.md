@@ -15,10 +15,10 @@ to enable some checks on how well the correction methods are working. The output
 Subject ID | case/control label | age | sex | motion | prediction
 
 where prediction is a probabilistic prediction of case or male status for prediction of case/control or prediction of sex files respectively,
-or point predictions of age or motion level for age and motion level prediction files. To enable assessment of which connections or regions
+or point predictions of age or motion level for age and motion level prediction files. case/control labels are -1 for case and 1 for control, sex labels are -1 for male and 1 for female.  To enable assessment of which connections or regions
 are important in the classification, we also output files containing the classification/regression weights for each fold and each prediction task.
 
 As the correction method is quite slow (taking several hours at least per cross validation fold), we recommend using a cluster if available to run a large number of cross validation folds in parallel,
 using the job id to index the output files and seed the random number generator so each train/test split is different. Alternatively classify.m
 can easily be modified to perform a number of cross validations iteratively on a single machine. In this case output files could either be per fold
-or a single file containing all predictions.
+or a single file containing all predictions. NB due to randomizations in the cross validations and within the GPML library results will not exactly match our own.
